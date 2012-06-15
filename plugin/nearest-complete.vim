@@ -1,5 +1,5 @@
-let g:CompleteNearestTriggerKey = "<D-j>"
-"let g:CompleteNearestWordChars = '[0-9A-Za-z_\-]'
+let g:NearestCompleteTriggerKey = "<D-j>"
+"let g:NearestCompleteWordChars = '[0-9A-Za-z_\-]'
 " Not used at the moment: better to change iskeyword, I think
 
 
@@ -57,7 +57,7 @@ endfunc
 
 " The completefunc for nearest-word completion
 " TODO: Ignore comments and keywords?
-func! CompleteNearest(findstart, base) 
+func! NearestComplete(findstart, base) 
 
   if a:findstart 
 
@@ -94,12 +94,12 @@ func! CompleteNearest(findstart, base)
   endif 
 endfun
 
-set completefunc=CompleteNearest
+set completefunc=NearestComplete
 
-" Pressing g:CompleteNearestTriggerKey opens the autocomplete popup, or moves
+" Pressing g:NearestCompleteTriggerKey opens the autocomplete popup, or moves
 " to the next option if the popup is already open
 inoremap <silent><expr> <D-j>      pumvisible() ? "\<C-n>" : "\<C-x><C-u>"
-"exec 'imap ' . g:CompleteNearestTriggerKey . ' pumvisible() ? ' . "\<C-n>" . ' : ' . "\<C-x><C-u>"
+"exec 'imap ' . g:NearestCompleteTriggerKey . ' pumvisible() ? ' . "\<C-n>" . ' : ' . "\<C-x><C-u>"
 " Pressing <esc> when the omnicomplete menu is shown doesn't exit insert mode
 imap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 " Pressing <CR> when the omnicomplete menu selects the current option and
