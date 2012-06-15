@@ -1,0 +1,7 @@
+A plugin to make VIM's autocomplete more like Textmate's: it searches for matching words both before and after the cursor, and orders the matches by distance from the cursor (closest first).
+
+By default it is bound to <D-j>. Pressing <D-j> when the popup window is open will move down the list.
+Pressing 'escape' in the popup will close the popup
+Pressing 'return' in the popup will insert the currently selected word and close the popup
+
+Install with pathogen.
